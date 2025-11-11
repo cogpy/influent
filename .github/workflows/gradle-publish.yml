@@ -1,0 +1,94 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+# This workflow will build a package using Gradle and then publish it to GitHub packages when a release is created
+# For more information see: https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#Publishing-using-gradle
+
+name: Gradle Package
+
+#on:
+#  release:
+#    types: [created]
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: maven
+#    - name: Set up JDK 17
+#      uses: actions/setup-java@v4
+#      with:
+#        java-version: '17'
+#        distribution: 'temurin'
+#        server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
+     #   settings-path: ${{ github.workspace }} # location for the settings.xml file
+#    - name: Setup Java
+      # You may pin to the exact commit or the version.
+      # uses: Fleshgrinder/setup-java@da5229ba146b252e0b14db4f3724f7f1f846bf66
+#      uses: Fleshgrinder/setup-java@1.0.0
+  #    with:
+        # Specifies a version to use instead of reading it from a file, useful in matrix builds.
+  #      version: # optional
+    # Specifies the name to the file where the version should be read from.
+  #  version-filename: # optional
+    # Specifies the Java distribution (temurin, zulu, adopt, adopt-hotspot, adopt-openj9, liberica, microsoft, or corretto).
+  #  distribution: # optional
+    # Specifies the Java architecture (x86, x64, armv7, aarch64, or ppc64le).
+  #  architecture: # optional
+    # Specifies the Java package type (jdk, jre, jdk+fx, or jre+fx).
+  #  package-type: # optional
+    # Specifies if the latest available version should be resolved on each run, or not.
+  #  check-latest: # optional
+          
+    - name: Java Info Action
+      # You may pin to the exact commit or the version.
+      # uses: YunaBraska/java-info-action@b5caaa08832514ae775f6104f0f1d933447c60eb
+      uses: YunaBraska/java-info-action@2.1.4
+  #    with:
+        # folder scan deep (-1 == endless)
+  #      deep: # optional, default is -1
+    # folder scan ("." == current)
+  #  work-dir: # optional, default is .
+    # java version fallback if no java version was found
+  #  jv-fallback: # optional, default is 17
+    # project version fallback if no project version was found
+  #  pv-fallback: # optional, default is null
+    # project encoding fallback if no project encoding was found
+  #  pe-fallback: # optional, default is null
+    # custom command for output "cmd_custom" which adds automatically gradle/maven prefix
+  #  custom-gradle-cmd: # optional
+    # custom command for output "cmd_custom" which adds automatically gradle/maven prefix
+  #  custom-maven-cmd: # optional
+    # converts null to empty string
+  #  null-to-empty: # optional, default is true
+          
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@af1da67850ed9a4cedd57bfd976089dd991e2582 # v4.0.0
+
+    - name: Build with Gradle
+      run: ./gradlew build
+
+    # The USERNAME and TOKEN need to correspond to the credentials environment variables used in
+    # the publishing section of your build.gradle
+    - name: Publish to GitHub Packages
+      run: ./gradlew publish
+      env:
+        USERNAME: ${{ github.actor }}
+        TOKEN: ${{ secrets.GITHUB_TOKEN }}
