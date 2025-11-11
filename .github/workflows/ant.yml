@@ -1,0 +1,101 @@
+# This workflow will build a Java project with Ant
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-ant
+
+name: ANT MADNESS Java CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up JDK 11
+      uses: actions/setup-java@v4
+      with:
+        java-version: '11'
+        distribution: 'temurin'
+
+#    - name: RunMavenTest
+      # You may pin to the exact commit or the version.
+      # uses: Maes95/maven-action@27e3a6c3e9b40435ba5eebde5bbc2078678f9103
+#      uses: Maes95/maven-action@1.1.0
+#      with:
+        # If true, build jar of the project
+#        package: # optional, default is false
+        # Test to exclude
+#        exclude: # optional
+          
+#            - name: Check Dependencies In Pull Request For Maven
+  # You may pin to the exact commit or the version.
+  # uses: volkanleo/check-dependencies-in-pr-action@450c12c451e1a8f4ec8bbff29e3de6920478518b
+#  uses: volkanleo/check-dependencies-in-pr-action@1.0.4
+#  with:
+    # Pull request url
+#    pull_request_url: 
+    # Github token
+#    github_token: 
+
+    - name: Checkout and Prepare Step
+      # You may pin to the exact commit or the version.
+      # uses: devonfw-actions/java-maven-setup@8bba793c57c58e02531b2dd375a0cc19cb0fb613
+      uses: devonfw-actions/java-maven-setup@v8
+#  with:
+    # Cache key for maven repository
+#    maven-cache-key: # optional
+    # Cache restore key for maven repository
+#    maven-cache-restore-key: # optional
+    # Cache key for jacoco and test execution data
+#    jacoco-cache-key: # optional
+    # Cache restore key for jacoco and test execution data
+#    jacoco-cache-restore-key: # optional
+    # Java version to setup
+#    java-version: # optional
+    # Path to clone the repository to, by default .
+#    repository_path: # optional, default is .
+    # 
+#    repository: # optional, default is ${{ github.repository }}
+    # Wheather to clone the repository as part of the composite action, defaulted to true
+#    clone: # optional, default is true
+    # 
+#    GPG_PRIVATE_KEY: # optional
+    # 
+#    GPG_PASSPHRASE: # optional
+    # 
+#    BUILD_USER: # optional
+    # 
+#    BUILD_USER_PASSWD: # optional
+    # 
+#    BUILD_USER_EMAIL: # optional
+    # GitHub actions token for repository cloning defaults to github.token
+#    GIT_TOKEN: # optional, default is ${{ github.token }}
+          
+#    - name: Maven & JDK8+ for monorepo projects
+      # You may pin to the exact commit or the version.
+      # uses: ZhilinS/action-maven-cli@52918214e79b7336f5776a12720e31b893598bf4
+#      uses: ZhilinS/action-maven-cli@v1.3
+#      with:
+        # Maven lifecycles
+#        lifecycle: site # default is clean package
+                        
+#    - name: automatic-version-bump-maven
+      # You may pin to the exact commit or the version.
+      # uses: MineEra-Corp/automatic-version-bump-maven@ac3a6603b94665f519005650f0b38cc152608b55
+#      uses: MineEra-Corp/automatic-version-bump-maven@v1
+          
+ #   - name: GitHub Action for Maven
+      # You may pin to the exact commit or the version.
+      # uses: LucaFeger/action-maven-cli@765e218a50f02a12a7596dc9e7321fc385888a27
+ #     uses: LucaFeger/action-maven-cli@1.1.0
+          
+    - name: Build Ant
+      run: mvn -fn ant:ant
+
+    - name: Build with Ant
+      run: ant -k -noinput -buildfile build.xml
