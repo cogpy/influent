@@ -266,8 +266,14 @@ public class JSONProperties implements Properties {
 
     @Override
     public Properties getPropertiesSet(String key, Properties defaultValue) {
-        Properties result = getPropertiesSet(key);
-        return result != null ? result : defaultValue;
+        try {
+            if (json.has(key)) {
+                return new JSONProperties(json.getJSONObject(key));
+            }
+        } catch (JSONException e) {
+            // ignore
+        }
+        return defaultValue;
     }
 
     @Override

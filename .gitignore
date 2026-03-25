@@ -9,3 +9,4 @@ target
 .idea
 .settings
 .project
+dependency-reduced-pom.xml
