@@ -33,6 +33,35 @@ public class JSONProperties implements Properties {
     }
 
     @Override
+    public Object getObject(String key) {
+        try {
+            if (json.has(key)) {
+                return json.get(key);
+            }
+        } catch (JSONException e) {
+            // ignore
+        }
+        return null;
+    }
+
+    @Override
+    public Iterable<Object> getObjects(String key) {
+        try {
+            if (json.has(key)) {
+                JSONArray arr = json.getJSONArray(key);
+                List<Object> result = new ArrayList<Object>();
+                for (int i = 0; i < arr.length(); i++) {
+                    result.add(arr.get(i));
+                }
+                return result;
+            }
+        } catch (JSONException e) {
+            // ignore
+        }
+        return Collections.emptyList();
+    }
+
+    @Override
     public String getString(String key, String defaultValue) {
         try {
             if (json.has(key)) {
@@ -57,6 +86,23 @@ public class JSONProperties implements Properties {
     }
 
     @Override
+    public Iterable<Boolean> getBooleans(String key) {
+        try {
+            if (json.has(key)) {
+                JSONArray arr = json.getJSONArray(key);
+                List<Boolean> result = new ArrayList<Boolean>();
+                for (int i = 0; i < arr.length(); i++) {
+                    result.add(arr.getBoolean(i));
+                }
+                return result;
+            }
+        } catch (JSONException e) {
+            // ignore
+        }
+        return Collections.emptyList();
+    }
+
+    @Override
     public Integer getInteger(String key, Integer defaultValue) {
         try {
             if (json.has(key)) {
@@ -66,6 +112,23 @@ public class JSONProperties implements Properties {
             // ignore
         }
         return defaultValue;
+    }
+
+    @Override
+    public Iterable<Integer> getIntegers(String key) {
+        try {
+            if (json.has(key)) {
+                JSONArray arr = json.getJSONArray(key);
+                List<Integer> result = new ArrayList<Integer>();
+                for (int i = 0; i < arr.length(); i++) {
+                    result.add(arr.getInt(i));
+                }
+                return result;
+            }
+        } catch (JSONException e) {
+            // ignore
+        }
+        return Collections.emptyList();
     }
 
     @Override
@@ -81,6 +144,52 @@ public class JSONProperties implements Properties {
     }
 
     @Override
+    public Iterable<Long> getLongs(String key) {
+        try {
+            if (json.has(key)) {
+                JSONArray arr = json.getJSONArray(key);
+                List<Long> result = new ArrayList<Long>();
+                for (int i = 0; i < arr.length(); i++) {
+                    result.add(arr.getLong(i));
+                }
+                return result;
+            }
+        } catch (JSONException e) {
+            // ignore
+        }
+        return Collections.emptyList();
+    }
+
+    @Override
+    public Float getFloat(String key, Float defaultValue) {
+        try {
+            if (json.has(key)) {
+                return (float) json.getDouble(key);
+            }
+        } catch (JSONException e) {
+            // ignore
+        }
+        return defaultValue;
+    }
+
+    @Override
+    public Iterable<Float> getFloats(String key) {
+        try {
+            if (json.has(key)) {
+                JSONArray arr = json.getJSONArray(key);
+                List<Float> result = new ArrayList<Float>();
+                for (int i = 0; i < arr.length(); i++) {
+                    result.add((float) arr.getDouble(i));
+                }
+                return result;
+            }
+        } catch (JSONException e) {
+            // ignore
+        }
+        return Collections.emptyList();
+    }
+
+    @Override
     public Double getDouble(String key, Double defaultValue) {
         try {
             if (json.has(key)) {
@@ -90,6 +199,23 @@ public class JSONProperties implements Properties {
             // ignore
         }
         return defaultValue;
+    }
+
+    @Override
+    public Iterable<Double> getDoubles(String key) {
+        try {
+            if (json.has(key)) {
+                JSONArray arr = json.getJSONArray(key);
+                List<Double> result = new ArrayList<Double>();
+                for (int i = 0; i < arr.length(); i++) {
+                    result.add(arr.getDouble(i));
+                }
+                return result;
+            }
+        } catch (JSONException e) {
+            // ignore
+        }
+        return Collections.emptyList();
     }
 
     @Override
@@ -136,6 +262,12 @@ public class JSONProperties implements Properties {
             // ignore
         }
         return null;
+    }
+
+    @Override
+    public Properties getPropertiesSet(String key, Properties defaultValue) {
+        Properties result = getPropertiesSet(key);
+        return result != null ? result : defaultValue;
     }
 
     @Override

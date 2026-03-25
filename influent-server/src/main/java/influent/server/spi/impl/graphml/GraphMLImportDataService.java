@@ -148,6 +148,12 @@ public class GraphMLImportDataService implements ImportDataService {
 							"Exception during cluster cache processing.",
 							e
 						);
+				} catch (org.apache.avro.AvroRemoteException e) {
+					throw new ResourceException(
+							Status.CLIENT_ERROR_BAD_REQUEST,
+							"Exception during cluster cache processing.",
+							e
+						);
 				} finally {
 					permits.revoke();
 				}
