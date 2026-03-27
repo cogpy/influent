@@ -74,10 +74,10 @@ protocol FL_DataTypes {
 		union {null, string} text = null;			// CHANGED IN 1.8
 
 		/** latitude */
-		union {double, null} lat = null;
+		union {null, double} lat = null;
 
 		/** longitude */
-		union {double, null} lon = null;
+		union {null, double} lon = null;
 
 		/** ISO 3 digit country code */
 		union {null, string} cc = null;				// CHANGED IN 1.8
@@ -235,7 +235,7 @@ protocol FL_DataTypes {
 		union {null, string} friendlyText = null;			// CHANGED IN 1.8
 
 		/** range of values */
-		union {FL_SingletonRange, FL_ListRange, FL_BoundedRange, FL_DistributionRange} range = null; // CHANGED IN 1.6
+		union {null, FL_SingletonRange, FL_ListRange, FL_BoundedRange, FL_DistributionRange} range = null; // CHANGED IN 1.6
 
 		union {null, FL_Provenance} provenance = null;
 
@@ -271,9 +271,9 @@ protocol FL_DataTypes {
 		/** Entity Tags (see above, e.g. "ACCOUNT") */
 		array<FL_EntityTag> tags;
 
-		union {FL_Provenance, null} provenance = null;
+		union {null, FL_Provenance} provenance = null;
 
-		union {FL_Uncertainty, null} uncertainty = null;
+		union {null, FL_Uncertainty} uncertainty = null;
 
 		array<FL_Property> properties;
 	}
@@ -293,7 +293,7 @@ protocol FL_DataTypes {
 		string uid;                                     // CHANGED IN 2.0
 
 		/** link types */
-		union {array<string>, null} linkTypes = null;
+		union {null, array<string>} linkTypes = null;
 
 		/** source entity uid */
 		union {null, string} source = null;				// CHANGED IN 1.8
@@ -307,9 +307,9 @@ protocol FL_DataTypes {
 		/** true if directed, false if undirected */
 		boolean directed = true;
 
-		union {FL_Provenance, null} provenance = null;
+		union {null, FL_Provenance} provenance = null;
 
-		union {FL_Uncertainty, null} uncertainty = null;
+		union {null, FL_Uncertainty} uncertainty = null;
 
 		array<FL_Property> properties;
 	}
@@ -329,9 +329,9 @@ protocol FL_DataTypes {
 		/** Entity Tags (see DataTypes, e.g. "CLUSTER") */
 		array<FL_EntityTag> tags;
 
-		union {FL_Provenance, null} provenance = null;
+		union {null, FL_Provenance} provenance = null;
 
-		union {FL_Uncertainty, null} uncertainty = null;
+		union {null, FL_Uncertainty} uncertainty = null;
 
 		array<FL_Property> properties;
 

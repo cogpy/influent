@@ -116,7 +116,7 @@ protocol FL_PatternSearch {
 		union {null, string} service = null,
 		long start = 0,
 		long max = -1,
-		union {FL_BoundedRange, null} dateRange = null, // ADDED IN 1.5
+		union {null, FL_BoundedRange} dateRange = null, // ADDED IN 1.5
 		boolean useAptima // ADDED IN 1.5
 	);
 
@@ -140,7 +140,7 @@ protocol FL_PatternSearch {
 		union {null, string} service = null,
 		long start = 0,
 		long max = -1,
-		union {FL_BoundedRange, null} dateRange = null // ADDED IN 1.5
+		union {null, FL_BoundedRange} dateRange = null // ADDED IN 1.5
 	);
 
 	//------------------------------------------------------------------------------------------------------------------
