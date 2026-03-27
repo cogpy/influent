@@ -14,10 +14,12 @@ import com.oculusinfo.ml.unsupervised.cluster.ClusterResult;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 public class KMeans extends BaseClusterer {
     private int k;
     private int maxIterations;
+    private static final long RANDOM_SEED = 42L;
 
     public KMeans(int k, int maxIterations, boolean useMultiThread) {
         super(useMultiThread);
@@ -43,16 +45,23 @@ public class KMeans extends BaseClusterer {
 
         if (instances.isEmpty()) return clusters;
 
-        // Select first k instances as initial centroids (deterministic)
+        // Use a fixed-seed random for reproducible cluster initialization
+        Random random = new Random(RANDOM_SEED);
         int numClusters = Math.min(k, instances.size());
-        for (int i = 0; i < numClusters; i++) {
-            Cluster cluster = createCluster();
-            Instance inst = instances.get(i);
-            // Copy features as initial centroid
-            for (Map.Entry<String, Feature> entry : inst.getFeatures().entrySet()) {
-                cluster.addFeature(entry.getValue());
+        List<Integer> selected = new ArrayList<Integer>();
+
+        while (selected.size() < numClusters) {
+            int idx = random.nextInt(instances.size());
+            if (!selected.contains(idx)) {
+                selected.add(idx);
+                Cluster cluster = createCluster();
+                Instance inst = instances.get(idx);
+                // Copy features as initial centroid
+                for (Map.Entry<String, Feature> entry : inst.getFeatures().entrySet()) {
+                    cluster.addFeature(entry.getValue());
+                }
+                clusters.add(cluster);
             }
-            clusters.add(cluster);
         }
         return clusters;
     }
