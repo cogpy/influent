@@ -191,9 +191,6 @@ public class QuBEClient extends RestClient implements FL_PatternSearch {
 			}
 		}
 		catch(IOException ioe) {
-			if (ioe instanceof AvroRemoteException) {
-				throw (AvroRemoteException)ioe;
-			}
 			throw new AvroRemoteException(ioe);
 		}
 	}

@@ -126,6 +126,12 @@ public class EntityClusterFactoryTest {
 
 			@Override
 			public Iterable<Properties> getPropertiesSets(String key) { throw new UnsupportedOperationException(); }
+
+			@Override
+			public Properties getPropertiesSet(String key) { throw new UnsupportedOperationException(); }
+
+			@Override
+			public boolean hasProperty(String key) { return values.containsKey(key); }
 		}; 
 		
 		FL_Geocoding geocoding = new BasicCountryLevelGeocoding();
