@@ -369,8 +369,8 @@ public class EntityClustererTest {
 		context.addEntities(entities);
 		context = clusterer.clusterEntities(entities, context);
 		
-		assertClusterEquals("c.cluster.1", "{c.cluster.1:[Zulu][]}", context);  // cluster by alpha "N-Z"
-		assertClusterEquals("c.cluster.2", "{c.cluster.2:[Adamn,Alf][]}", context);  // cluster by alpha "A-M"
+		assertClusterEquals("c.cluster.1", "{c.cluster.1:[Adamn,Alf][]}", context);  // cluster by alpha "A-M"
+		assertClusterEquals("c.cluster.2", "{c.cluster.2:[Zulu][]}", context);  // cluster by alpha "N-Z"
 	}
 	
 	@Test
@@ -388,12 +388,12 @@ public class EntityClustererTest {
 		context.addEntities(entities);
 		context = clusterer.clusterEntities(entities, context);
 		
-		assertClusterEquals("c.cluster.1", "{c.cluster.1:[Zulu][]}", context);  // cluster by alpha "N-Z"
-		assertClusterEquals("c.cluster.2", "{c.cluster.2:[][c.cluster.4,c.cluster.3]}", context);  // cluster by alpha "A-M"
-		assertClusterEquals("c.cluster.3", "{c.cluster.3:[Bob][]}", context);  // cluster by alpha "B"
-		assertClusterEquals("c.cluster.4", "{c.cluster.4:[][c.cluster.5]}", context);  // cluster by alpha "A"
-		assertClusterEquals("c.cluster.5", "{c.cluster.5:[][c.cluster.6]}", context);  // cluster by fuzzy matching   <-- Strange
-		assertClusterEquals("c.cluster.6", "{c.cluster.6:[][c.cluster.8,c.cluster.7]}", context);  // cluster by fingerprint
+		assertClusterEquals("c.cluster.2", "{c.cluster.2:[Zulu][]}", context);  // cluster by alpha "N-Z"
+		assertClusterEquals("c.cluster.1", "{c.cluster.1:[][c.cluster.3,c.cluster.4]}", context);  // cluster by alpha "A-M"
+		assertClusterEquals("c.cluster.3", "{c.cluster.3:[][c.cluster.5]}", context);  // cluster by alpha "A"
+		assertClusterEquals("c.cluster.4", "{c.cluster.4:[Bob][]}", context);  // cluster by alpha "B"
+		assertClusterEquals("c.cluster.5", "{c.cluster.5:[][c.cluster.6]}", context);  // cluster by fuzzy matching
+		assertClusterEquals("c.cluster.6", "{c.cluster.6:[][c.cluster.7,c.cluster.8]}", context);  // cluster by fingerprint
 		
 		FL_Cluster leaf1 = context.clusters.get("c.cluster.7");
 		
@@ -420,8 +420,8 @@ public class EntityClustererTest {
 		context.addEntities(entities);
 		context = clusterer.clusterEntities(entities, context);
 		
-		assertClusterEquals("c.cluster.1", "{c.cluster.1:[Zulu][]}", context);  // cluster by alpha "N-Z"
-		assertClusterEquals("c.cluster.2", "{c.cluster.2:[][c.cluster.3]}", context);  // cluster by alpha "A-M"
+		assertClusterEquals("c.cluster.2", "{c.cluster.2:[Zulu][]}", context);  // cluster by alpha "N-Z"
+		assertClusterEquals("c.cluster.1", "{c.cluster.1:[][c.cluster.3]}", context);  // cluster by alpha "A-M"
 		assertClusterEquals("c.cluster.3", "{c.cluster.3:[][c.cluster.4]}", context);  // cluster by alpha "A"
 		assertClusterEquals("c.cluster.4", "{c.cluster.4:[][c.cluster.8,c.cluster.9]}", context);  // cluster by alpha "A"
 		FL_Cluster leaf1 = context.clusters.get("c.cluster.8");
@@ -445,21 +445,21 @@ public class EntityClustererTest {
 		context.addEntities(entities);
 		context = clusterer.clusterEntities(entities, context);
 		
-		assertClusterEquals("c.cluster.1", "{c.cluster.1:[Zulu][]}", context);  // cluster by alpha "N-Z"
-		assertClusterEquals("c.cluster.2", "{c.cluster.2:[][c.cluster.4,c.cluster.3]}", context);  // cluster by alpha "A-M"
-		assertClusterEquals("c.cluster.3", "{c.cluster.3:[Bob][]}", context);  // cluster by alpha "B"
-		assertClusterEquals("c.cluster.4", "{c.cluster.4:[Amandå,Alf][]}", context);  // cluster by alpha "A"
+		assertClusterEquals("c.cluster.2", "{c.cluster.2:[Zulu][]}", context);  // cluster by alpha "N-Z"
+		assertClusterEquals("c.cluster.1", "{c.cluster.1:[][c.cluster.3,c.cluster.4]}", context);  // cluster by alpha "A-M"
+		assertClusterEquals("c.cluster.3", "{c.cluster.3:[Amandå,Alf][]}", context);  // cluster by alpha "A"
+		assertClusterEquals("c.cluster.4", "{c.cluster.4:[Bob][]}", context);  // cluster by alpha "B"
 		
 		// cluster a new entity
 		entities = Collections.singletonList(createEntity("Amanda", FL_EntityTag.ANONYMOUS, "Vancouver", "CAN", 49.2500, -123.1000, 5, 7));
 		context.addEntities(entities);
 		context = clusterer.clusterEntities(entities, context);
 		
-		assertClusterEquals("c.cluster.1", "{c.cluster.1:[Zulu][]}", context);  // cluster by alpha "N-Z"
-		assertClusterEquals("c.cluster.2", "{c.cluster.2:[][c.cluster.4,c.cluster.3]}", context);  // cluster by alpha "A-M"
-		assertClusterEquals("c.cluster.3", "{c.cluster.3:[Bob][]}", context);  // cluster by alpha "B"
-		assertClusterEquals("c.cluster.4", "{c.cluster.4:[][c.cluster.5]}", context);  // cluster by alpha "A"
-		assertClusterEquals("c.cluster.5", "{c.cluster.5:[][c.cluster.7,c.cluster.6]}", context);  // cluster by fuzzy matching
+		assertClusterEquals("c.cluster.2", "{c.cluster.2:[Zulu][]}", context);  // cluster by alpha "N-Z"
+		assertClusterEquals("c.cluster.1", "{c.cluster.1:[][c.cluster.3,c.cluster.4]}", context);  // cluster by alpha "A-M"
+		assertClusterEquals("c.cluster.4", "{c.cluster.4:[Bob][]}", context);  // cluster by alpha "B"
+		assertClusterEquals("c.cluster.3", "{c.cluster.3:[][c.cluster.5]}", context);  // cluster by alpha "A"
+		assertClusterEquals("c.cluster.5", "{c.cluster.5:[][c.cluster.6,c.cluster.7]}", context);  // cluster by fuzzy matching
 		
 		FL_Cluster leaf1 = context.clusters.get("c.cluster.6");
 		
@@ -517,15 +517,15 @@ public class EntityClustererTest {
 		context.addEntities(entities);
 		context = clusterer.clusterEntities(entities, context);
 		
-		assertClusterEquals("c.cluster.1", "{c.cluster.1:[][c.cluster.6,c.cluster.5]}", context);
+		assertClusterEquals("c.cluster.1", "{c.cluster.1:[][c.cluster.5,c.cluster.6]}", context);
 		
 		FL_Cluster leaf1 = context.clusters.get("c.cluster.5");
 		
 		if (leaf1.getMembers().size() == 1) {
 			assertClusterEquals("c.cluster.5", "{c.cluster.5:[Amanda][]}", context);
-			assertClusterEquals("c.cluster.6", "{c.cluster.6:[Zulu,Bob][]}", context);
+			assertClusterEquals("c.cluster.6", "{c.cluster.6:[Bob,Zulu][]}", context);
 		} else {
-			assertClusterEquals("c.cluster.5", "{c.cluster.5:[Zulu,Bob][]}", context);
+			assertClusterEquals("c.cluster.5", "{c.cluster.5:[Bob,Zulu][]}", context);
 			assertClusterEquals("c.cluster.6", "{c.cluster.6:[Amanda][]}", context);
 		}
 	
@@ -534,18 +534,18 @@ public class EntityClustererTest {
 		context.addEntities(entities);
 		context = clusterer.clusterEntities(entities, context);
 		
-		assertClusterEquals("c.cluster.1", "{c.cluster.1:[][c.cluster.6,c.cluster.5]}", context);
+		assertClusterEquals("c.cluster.1", "{c.cluster.1:[][c.cluster.5,c.cluster.6]}", context);
 		
 		if (leaf1.getMembers().size() == 1) {
 			assertClusterEquals("c.cluster.5", "{c.cluster.5:[Amanda][]}", context);
-			assertClusterEquals("c.cluster.6", "{c.cluster.6:[][c.cluster.8,c.cluster.9]}", context);
+			assertClusterEquals("c.cluster.6", "{c.cluster.6:[][c.cluster.7,c.cluster.8]}", context);
 			assertClusterEquals("c.cluster.8", "{c.cluster.8:[Zulu][]}", context);
-			assertClusterEquals("c.cluster.9", "{c.cluster.9:[Bob,Alf][]}", context);
+			assertClusterEquals("c.cluster.7", "{c.cluster.7:[Bob,Alf][]}", context);
 		} else {
 			assertClusterEquals("c.cluster.6", "{c.cluster.6:[Amanda][]}", context);
-			assertClusterEquals("c.cluster.5", "{c.cluster.5:[][c.cluster.8,c.cluster.9]}", context);
+			assertClusterEquals("c.cluster.5", "{c.cluster.5:[][c.cluster.7,c.cluster.8]}", context);
 			assertClusterEquals("c.cluster.8", "{c.cluster.8:[Zulu][]}", context);
-			assertClusterEquals("c.cluster.9", "{c.cluster.9:[Bob,Alf][]}", context);
+			assertClusterEquals("c.cluster.7", "{c.cluster.7:[Bob,Alf][]}", context);
 		}
 	}
 	
@@ -563,11 +563,11 @@ public class EntityClustererTest {
 		context.addEntities(entities);
 		context = clusterer.clusterEntities(entities, context);
 		
-		assertClusterEquals("c.cluster.1", "{c.cluster.1:[][c.cluster.3,c.cluster.2]}", context);
+		assertClusterEquals("c.cluster.1", "{c.cluster.1:[][c.cluster.2,c.cluster.3]}", context);
 		assertClusterEquals("c.cluster.2", "{c.cluster.2:[Amanda][]}", context);
 		assertClusterEquals("c.cluster.3", "{c.cluster.3:[][c.cluster.4]}", context);
 		assertClusterEquals("c.cluster.4", "{c.cluster.4:[][c.cluster.5]}", context);
-		assertClusterEquals("c.cluster.5", "{c.cluster.5:[][c.cluster.7,c.cluster.6]}", context);
+		assertClusterEquals("c.cluster.5", "{c.cluster.5:[][c.cluster.6,c.cluster.7]}", context);
 		assertClusterEquals("c.cluster.6", "{c.cluster.6:[Bob,Alf][]}", context);
 		assertClusterEquals("c.cluster.7", "{c.cluster.7:[Zulu][]}", context);
 	}
@@ -588,14 +588,15 @@ public class EntityClustererTest {
 		context.addEntities(entities);
 		context = clusterer.clusterEntities(entities, context);
 		
-		assertClusterEquals("c.cluster.1", "{c.cluster.1:[Alf][]}", context);					// Europe
-		assertClusterEquals("c.cluster.2", "{c.cluster.2:[][c.cluster.3]}", context);			// North America
-		assertClusterEquals("c.cluster.3", "{c.cluster.3:[][c.cluster.4,c.cluster.5]}", context);	// USA and CAN
-		assertClusterEquals("c.cluster.4", "{c.cluster.4:[Zulu][]}", context);				// USA
-		assertClusterEquals("c.cluster.5", "{c.cluster.5:[][c.cluster.8,c.cluster.7,c.cluster.6]}", context);	// CAN
-		assertClusterEquals("c.cluster.6", "{c.cluster.6:[Amanda][]}", context);				// Toronto
-		assertClusterEquals("c.cluster.7", "{c.cluster.7:[Bob,Steve][]}", context);			// Vancouver and Victoria
-		assertClusterEquals("c.cluster.8", "{c.cluster.8:[Dan][]}", context);					// Montreal
+		assertClusterEquals("c.cluster.2", "{c.cluster.2:[Alf][]}", context);					// Europe
+		assertClusterEquals("c.cluster.1", "{c.cluster.1:[][c.cluster.3]}", context);			// North America
+		assertClusterEquals("c.cluster.3", "{c.cluster.3:[][c.cluster.4,c.cluster.5]}", context);	// CAN and USA
+		assertClusterEquals("c.cluster.5", "{c.cluster.5:[Zulu][]}", context);				// USA
+		assertClusterEquals("c.cluster.4", "{c.cluster.4:[][c.cluster.6,c.cluster.7,c.cluster.8,c.cluster.9]}", context);	// CAN
+		assertClusterEquals("c.cluster.6", "{c.cluster.6:[Amanda][]}", context);			// Toronto
+		assertClusterEquals("c.cluster.7", "{c.cluster.7:[Bob][]}", context);				// Vancouver
+		assertClusterEquals("c.cluster.8", "{c.cluster.8:[Steve][]}", context);				// Victoria
+		assertClusterEquals("c.cluster.9", "{c.cluster.9:[Dan][]}", context);				// Montreal
 	}
 	
 	@Test
@@ -612,11 +613,11 @@ public class EntityClustererTest {
 		context.addEntities(entities);
 		context = clusterer.clusterEntities(entities, context);
 		
-		assertClusterEquals("c.cluster.1", "{c.cluster.1:[Alf][]}", context);					// Europe
-		assertClusterEquals("c.cluster.2", "{c.cluster.2:[][c.cluster.3]}", context);			// North America
-		assertClusterEquals("c.cluster.3", "{c.cluster.3:[][c.cluster.4,c.cluster.5]}", context);	// USA and CAN
-		assertClusterEquals("c.cluster.4", "{c.cluster.4:[Zulu][]}", context);				// USA
-		assertClusterEquals("c.cluster.5", "{c.cluster.5:[Amanda,Bob][]}", context);			// CAN
+		assertClusterEquals("c.cluster.2", "{c.cluster.2:[Alf][]}", context);					// Europe
+		assertClusterEquals("c.cluster.1", "{c.cluster.1:[][c.cluster.3]}", context);			// North America
+		assertClusterEquals("c.cluster.3", "{c.cluster.3:[][c.cluster.4,c.cluster.5]}", context);	// CAN and USA
+		assertClusterEquals("c.cluster.4", "{c.cluster.4:[Amanda,Bob][]}", context);			// CAN
+		assertClusterEquals("c.cluster.5", "{c.cluster.5:[Zulu][]}", context);				// USA
 		
 		// cluster new entities
 		entities.clear();
@@ -625,18 +626,15 @@ public class EntityClustererTest {
 		context.addEntities(entities);
 		context = clusterer.clusterEntities(entities, context);
 		
-		for (FL_Cluster c : context.clusters.values()) {
-			System.out.println(this.clusterToString(c));
-		}
-		
-		assertClusterEquals("c.cluster.1", "{c.cluster.1:[Alf][]}", context);					// Europe
-		assertClusterEquals("c.cluster.2", "{c.cluster.2:[][c.cluster.3]}", context);			// North America
-		assertClusterEquals("c.cluster.3", "{c.cluster.3:[][c.cluster.4,c.cluster.5]}", context);	// USA and CAN
-		assertClusterEquals("c.cluster.4", "{c.cluster.4:[Zulu][]}", context);				// USA
-		assertClusterEquals("c.cluster.5", "{c.cluster.5:[][c.cluster.8,c.cluster.7,c.cluster.6]}", context);	// CAN
-		assertClusterEquals("c.cluster.6", "{c.cluster.6:[Amanda][]}", context);				// Toronto
-		assertClusterEquals("c.cluster.7", "{c.cluster.7:[Bob,Steve][]}", context);			// Vancouver and Victoria
-		assertClusterEquals("c.cluster.8", "{c.cluster.8:[Dan][]}", context);					// Montreal
+		assertClusterEquals("c.cluster.2", "{c.cluster.2:[Alf][]}", context);					// Europe
+		assertClusterEquals("c.cluster.1", "{c.cluster.1:[][c.cluster.3]}", context);			// North America
+		assertClusterEquals("c.cluster.3", "{c.cluster.3:[][c.cluster.4,c.cluster.5]}", context);	// CAN and USA
+		assertClusterEquals("c.cluster.5", "{c.cluster.5:[Zulu][]}", context);				// USA
+		assertClusterEquals("c.cluster.4", "{c.cluster.4:[][c.cluster.6,c.cluster.7,c.cluster.8,c.cluster.9]}", context);	// CAN
+		assertClusterEquals("c.cluster.6", "{c.cluster.6:[Amanda][]}", context);			// Toronto
+		assertClusterEquals("c.cluster.7", "{c.cluster.7:[Bob][]}", context);				// Vancouver
+		assertClusterEquals("c.cluster.8", "{c.cluster.8:[Steve][]}", context);				// Victoria
+		assertClusterEquals("c.cluster.9", "{c.cluster.9:[Dan][]}", context);				// Montreal
 	}
 	
 	@Test
@@ -658,14 +656,15 @@ public class EntityClustererTest {
 		context.addEntities(entities);
 		context = clusterer.clusterEntities(entities, context);
 		
-		assertClusterEquals("c.cluster.1", "{c.cluster.1:[Zulu][]}", context);				// Unknown
+		assertClusterEquals("c.cluster.3", "{c.cluster.3:[Zulu][]}", context);				// Unknown
 		assertClusterEquals("c.cluster.2", "{c.cluster.2:[Alf][]}", context);					// Europe
-		assertClusterEquals("c.cluster.3", "{c.cluster.3:[][c.cluster.4]}", context);			// North America
+		assertClusterEquals("c.cluster.1", "{c.cluster.1:[][c.cluster.4]}", context);			// North America
 		assertClusterEquals("c.cluster.4", "{c.cluster.4:[][c.cluster.5]}", context);			// CAN
-		assertClusterEquals("c.cluster.5", "{c.cluster.5:[][c.cluster.8,c.cluster.7,c.cluster.6]}", context);	// CAN
-		assertClusterEquals("c.cluster.6", "{c.cluster.6:[Amanda][]}", context);				// Toronto
-		assertClusterEquals("c.cluster.7", "{c.cluster.7:[Bob,Steve][]}", context);			// Vancouver and Victoria
-		assertClusterEquals("c.cluster.8", "{c.cluster.8:[Dan][]}", context);					// Montreal
+		assertClusterEquals("c.cluster.5", "{c.cluster.5:[][c.cluster.6,c.cluster.7,c.cluster.8,c.cluster.9]}", context);	// CAN
+		assertClusterEquals("c.cluster.6", "{c.cluster.6:[Amanda][]}", context);			// Toronto
+		assertClusterEquals("c.cluster.7", "{c.cluster.7:[Bob][]}", context);				// Vancouver
+		assertClusterEquals("c.cluster.8", "{c.cluster.8:[Steve][]}", context);				// Victoria
+		assertClusterEquals("c.cluster.9", "{c.cluster.9:[Dan][]}", context);				// Montreal
 	}
 	
 }

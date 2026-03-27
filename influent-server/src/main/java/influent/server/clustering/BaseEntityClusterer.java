@@ -235,7 +235,7 @@ public abstract class BaseEntityClusterer implements EntityClusterer {
 	}
 	
 	protected Map<String, FL_Cluster> mergeClusterBuckets(Map<String, List<FL_Cluster>> srcBuckets, Map<String, FL_Cluster> dstBuckets) {
-		Map<String, FL_Cluster> modifiedClusters = new HashMap<String, FL_Cluster>();
+		Map<String, FL_Cluster> modifiedClusters = new LinkedHashMap<String, FL_Cluster>();
 		
 		// merge buckets that have the same bucket id or create a new cluster if no previous bucket exists
 		for (String bucketId : srcBuckets.keySet()) {
@@ -283,7 +283,7 @@ public abstract class BaseEntityClusterer implements EntityClusterer {
 	}
 	
 	protected Map<String, FL_Cluster> mergeEntityBuckets(Map<String, List<FL_Entity>> srcBuckets, Map<String, FL_Cluster> dstBuckets) {
-		Map<String, FL_Cluster> modifiedClusters = new HashMap<String, FL_Cluster>();
+		Map<String, FL_Cluster> modifiedClusters = new LinkedHashMap<String, FL_Cluster>();
 		
 		// merge buckets that have the same bucket id or create a new cluster if no previous bucket exists
 		for (String bucketId : srcBuckets.keySet()) {
@@ -308,7 +308,7 @@ public abstract class BaseEntityClusterer implements EntityClusterer {
 	}
 	
 	protected Collection<FL_Cluster> findNewClusters(Map<String, FL_Cluster> modified, Collection<FL_Cluster> existing) {
-		Map<String, FL_Cluster> newClusters = new HashMap<String, FL_Cluster>(modified); 
+		Map<String, FL_Cluster> newClusters = new LinkedHashMap<String, FL_Cluster>(modified); 
 		
 		for (FL_Cluster cluster : existing) {
 			newClusters.remove(cluster.getUid());
@@ -317,7 +317,7 @@ public abstract class BaseEntityClusterer implements EntityClusterer {
 	}
 	
 	protected Map<String, FL_Cluster> retrieveClusterBuckets(Collection<FL_Cluster> clusters, ClusterContext context) {
-		Map<String, FL_Cluster> buckets = new HashMap<String, FL_Cluster>();
+		Map<String, FL_Cluster> buckets = new LinkedHashMap<String, FL_Cluster>();
 		
 		for (FL_Cluster cluster : clusters) {
 			String key = getBucketKey(cluster, context);
@@ -374,7 +374,7 @@ public abstract class BaseEntityClusterer implements EntityClusterer {
 										Collection<FL_Cluster> immutableClusters,
 										Collection<FL_Cluster> clusters, 
 										ClusterContext context) {
-		Map<String, FL_Cluster> modifiedClusters = new HashMap<String, FL_Cluster>();
+		Map<String, FL_Cluster> modifiedClusters = new LinkedHashMap<String, FL_Cluster>();
 		
 		// fetch previous buckets
 		Map<String, FL_Cluster> mutableBuckets = retrieveClusterBuckets(clusters, context);

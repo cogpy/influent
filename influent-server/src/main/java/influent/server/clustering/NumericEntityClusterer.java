@@ -20,7 +20,7 @@
 package influent.server.clustering;
 
 import java.util.Collection;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -216,7 +216,7 @@ public class NumericEntityClusterer extends BaseEntityClusterer {
 		// clean up
 		clusterer.terminate();
 		
-		Map<String, FL_Cluster> modifiedClusters = new HashMap<String, FL_Cluster>();
+		Map<String, FL_Cluster> modifiedClusters = new LinkedHashMap<String, FL_Cluster>();
 		
 		for (Cluster c : rs) {
 			List<FL_Cluster> subClusters = new LinkedList<FL_Cluster>();
@@ -310,7 +310,7 @@ public class NumericEntityClusterer extends BaseEntityClusterer {
 		// clean up
 		clusterer.terminate();
 		
-		Map<String, FL_Cluster> modifiedClusters = new HashMap<String, FL_Cluster>();
+		Map<String, FL_Cluster> modifiedClusters = new LinkedHashMap<String, FL_Cluster>();
 		
 		for (Cluster c : rs) {
 			List<FL_Cluster> subClusters = new LinkedList<FL_Cluster>();
