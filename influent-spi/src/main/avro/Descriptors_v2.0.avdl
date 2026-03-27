@@ -123,7 +123,7 @@ protocol FL_Descriptors {
 		string key;
 
 		/** value of the Property to search on */
-		union {FL_SingletonRange, FL_ListRange, FL_BoundedRange} range = null;  // CHANGED IN 1.5
+		union {null, FL_SingletonRange, FL_ListRange, FL_BoundedRange} range = null;  // CHANGED IN 1.5
 
 		/** If not null/empty, the value is relative to a logical variable specified here (e.g. "X")
 		 *  Other parameters using the same logical variable name are relative to this value.
@@ -150,7 +150,7 @@ protocol FL_Descriptors {
 		union {FL_Constraint, null} constraint;   // CHANGED IN 1.5 (was "weight")
 
 		/** List of type mappings to match in **/
-		array<FL_TypeMapping> typeMappings = null;  // ADDED IN 1.8
+		union{null, array<FL_TypeMapping>} typeMappings = null;  // ADDED IN 1.8
 	}
 
 	//------------------------------------------------------------------------------------------------------------------
@@ -175,21 +175,21 @@ protocol FL_Descriptors {
 		union{null, string} role = null;				// CHANGED IN 1.8
 
 		/** entities should match AT LEAST ONE OF the given entity IDs, if provided */
-		union{array<string>, null} entities = null;
+		union{null, array<string>} entities = null;
 
 		/** entities should match AT LEAST ONE OF the given tags (e.g ACCOUNT), if provided */
-		union{array<FL_EntityTag>, null} tags = null;
+		union{null, array<FL_EntityTag>} tags = null;
 
 		/** entities should match ALL of the provided property descriptors (e.g. LABEL, GEO, etc)
 		 * e.g. logical "AND". Partial matches may be returned, if scoring is provided.
 		 */
-		union{array<FL_PropertyMatchDescriptor>, null} properties = null;
+		union{null, array<FL_PropertyMatchDescriptor>} properties = null;
 
 		/** used for QBE -- not used to match like the entities list, this list of entities
 		 * should be used by the system to infer the above constraints when the user does not
 		 * provide them.
 		 */
-		union{array<string>, null} examplars = null;
+		union{null, array<string>} examplars = null;
 
 		/** MUST_EQUALS, FUZZY_PARTIAL_OPTIONAL, MUST_NOT */
 		union {FL_Constraint, null} constraint; // CHANGED IN 1.5 (was "weight")
@@ -223,10 +223,10 @@ protocol FL_Descriptors {
 		union{null, string} target;
 
 		/** link types, if provided */
-		union{array<string>, null} linkTypes = null;
+		union{null, array<string>} linkTypes = null;
 
 		/** entities should match ALL of the provided property descriptors (e.g. LABEL, etc), if provided */
-		union{array<FL_PropertyMatchDescriptor>, null} properties = null;
+		union{null, array<FL_PropertyMatchDescriptor>} properties = null;
 
 		/** If not negative, indicates the relative order of events within the pattern. Need not be unique.
 		 * If not provided, then transaction/event order must be inferred from the graph structure.
@@ -234,7 +234,7 @@ protocol FL_Descriptors {
 		int stage = -1;
 
 		/** MUST_EQUALS, FUZZY_PARTIAL_OPTIONAL, MUST_NOT */
-		union {FL_Constraint, null} constraint = null; // CHANGED IN 1.5 (replaces weight)
+		union {null, FL_Constraint} constraint = null; // CHANGED IN 1.5 (replaces weight)
 	}
 
 	//------------------------------------------------------------------------------------------------------------------

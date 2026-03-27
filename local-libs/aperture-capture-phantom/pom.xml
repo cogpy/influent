@@ -37,6 +37,74 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+            <!-- Attach stub binaries for all supported platforms so app modules can resolve them -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>3.3.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-phantom-linux-x86-64</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>attach-artifact</goal>
+                        </goals>
+                        <configuration>
+                            <artifacts>
+                                <artifact>
+                                    <file>${project.basedir}/src/main/stubs/phantom-stub</file>
+                                    <type>linux-x86-64</type>
+                                </artifact>
+                            </artifacts>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>attach-phantom-linux-i686</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>attach-artifact</goal>
+                        </goals>
+                        <configuration>
+                            <artifacts>
+                                <artifact>
+                                    <file>${project.basedir}/src/main/stubs/phantom-stub</file>
+                                    <type>linux-i686</type>
+                                </artifact>
+                            </artifacts>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>attach-phantom-macosx</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>attach-artifact</goal>
+                        </goals>
+                        <configuration>
+                            <artifacts>
+                                <artifact>
+                                    <file>${project.basedir}/src/main/stubs/phantom-stub</file>
+                                    <type>macosx</type>
+                                </artifact>
+                            </artifacts>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>attach-phantom-exe</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>attach-artifact</goal>
+                        </goals>
+                        <configuration>
+                            <artifacts>
+                                <artifact>
+                                    <file>${project.basedir}/src/main/stubs/phantom-stub</file>
+                                    <type>exe</type>
+                                </artifact>
+                            </artifacts>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 </project>

@@ -22,6 +22,7 @@ package influent.server.clustering;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -326,7 +327,7 @@ public abstract class BaseEntityClusterer implements EntityClusterer {
 	}
 	
 	protected Map<String, List<FL_Cluster>> bucketClusters(Collection<FL_Cluster> clusters, ClusterContext context) {
-		Map<String, List<FL_Cluster>> buckets = new HashMap<String, List<FL_Cluster>>();
+		Map<String, List<FL_Cluster>> buckets = new LinkedHashMap<String, List<FL_Cluster>>();
 		
 		for (FL_Cluster cluster : clusters) {
 			String key = getBucketKey(cluster, context);
@@ -339,7 +340,7 @@ public abstract class BaseEntityClusterer implements EntityClusterer {
 	}
 	
 	protected Map<String, List<FL_Entity>> bucketEntities(Collection<FL_Entity> entities) {
-		Map<String, List<FL_Entity>> buckets = new HashMap<String, List<FL_Entity>>();
+		Map<String, List<FL_Entity>> buckets = new LinkedHashMap<String, List<FL_Entity>>();
 		
 		for (FL_Entity entity : entities) {
 			String key = getBucketKey(entity);
