@@ -19,7 +19,7 @@ import java.util.Random;
 public class KMeans extends BaseClusterer {
     private int k;
     private int maxIterations;
-    private Random random = new Random();
+    private static final long RANDOM_SEED = 42L;
 
     public KMeans(int k, int maxIterations, boolean useMultiThread) {
         super(useMultiThread);
@@ -45,7 +45,8 @@ public class KMeans extends BaseClusterer {
 
         if (instances.isEmpty()) return clusters;
 
-        // Randomly select k instances as initial centroids
+        // Use a fixed-seed random for reproducible cluster initialization
+        Random random = new Random(RANDOM_SEED);
         int numClusters = Math.min(k, instances.size());
         List<Integer> selected = new ArrayList<Integer>();
 

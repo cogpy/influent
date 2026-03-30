@@ -25,7 +25,7 @@ import influent.idl.FL_Entity;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.Collection;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import org.apache.avro.Schema;
@@ -45,9 +45,9 @@ public class ClusterContext implements Serializable {
 	public static final Schema CLUSTER_MAP_SCHEMA = Schema.createMap(FL_Cluster.getClassSchema());
 	public static final Schema ENTITY_MAP_SCHEMA = Schema.createMap(FL_Entity.getClassSchema());
 	
-	public Map<String, FL_Cluster> roots = new HashMap<String, FL_Cluster>();
-	public Map<String, FL_Cluster> clusters = new HashMap<String, FL_Cluster>();
-	public Map<String, FL_Entity> entities = new HashMap<String, FL_Entity>();
+	public Map<String, FL_Cluster> roots = new LinkedHashMap<String, FL_Cluster>();
+	public Map<String, FL_Cluster> clusters = new LinkedHashMap<String, FL_Cluster>();
+	public Map<String, FL_Entity> entities = new LinkedHashMap<String, FL_Entity>();
 	
 	
 	public void addClusters(Collection<FL_Cluster> clusters) {

@@ -27,8 +27,8 @@ import influent.server.clustering.utils.EntityClusterFactory;
 import influent.server.clustering.utils.ClustererProperties;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -58,7 +58,7 @@ public class LabelEntityClusterer extends BaseEntityClusterer {
 	private int bucketSize = 10;
 	
 	private Set<String> getStopWords() {
-		Set<String> stopwords = new HashSet<String>();
+		Set<String> stopwords = new LinkedHashSet<String>();
 		
 		try {
 			// retrieve the stopwords property
@@ -131,7 +131,7 @@ public class LabelEntityClusterer extends BaseEntityClusterer {
 	
 	private Map<String, String> createAlphaKeyLookupTable() {
 		String[] alphabet = new String[]{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
-		Map<String, String> lookupTable = new HashMap<String, String>();
+		Map<String, String> lookupTable = new LinkedHashMap<String, String>();
 		
 		int start = 0;
 		
@@ -276,7 +276,7 @@ public class LabelEntityClusterer extends BaseEntityClusterer {
 		// clean up
 		clusterer.terminate();
 		
-		Map<String, FL_Cluster> modifiedClusters = new HashMap<String, FL_Cluster>();
+		Map<String, FL_Cluster> modifiedClusters = new LinkedHashMap<String, FL_Cluster>();
 		
 		for (Cluster c : rs) {
 			List<FL_Cluster> subClusters = new LinkedList<FL_Cluster>();

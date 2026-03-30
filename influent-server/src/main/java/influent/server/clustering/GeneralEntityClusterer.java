@@ -28,8 +28,8 @@ import influent.server.utilities.InfluentId;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -196,7 +196,7 @@ public class GeneralEntityClusterer extends BaseEntityClusterer {
 		context.roots.putAll(results.roots);
 		
 		// keep track of the modified roots - only they need to have their summaries recomputed
-		Map<String, FL_Cluster> modifiedRoots = new HashMap<String, FL_Cluster>(results.roots);
+		Map<String, FL_Cluster> modifiedRoots = new LinkedHashMap<String, FL_Cluster>(results.roots);
 		
 		// find the candidate clusters to split
 		Collection<FL_Cluster> clustersToSplit = new LinkedList<FL_Cluster>();
@@ -215,7 +215,7 @@ public class GeneralEntityClusterer extends BaseEntityClusterer {
 		while (!clustersToSplit.isEmpty()) {
 			EntityClusterer clusterer = clusterStages.get(currentStage); 
 					
-			Map<String, FL_Cluster> stageResults = new HashMap<String, FL_Cluster>();
+			Map<String, FL_Cluster> stageResults = new LinkedHashMap<String, FL_Cluster>();
 			
 			for (FL_Cluster cluster : clustersToSplit) {
 				// sub-cluster the entity cluster
@@ -297,7 +297,7 @@ public class GeneralEntityClusterer extends BaseEntityClusterer {
 		}
 		cluster.getMembers().clear();
 		List<String> mutableSubClusters = InfluentId.filterInfluentIds(cluster.getSubclusters(), InfluentId.CLUSTER);
-		Set<String> uniqueIds = new HashSet<String>(mutableSubClusters);
+		Set<String> uniqueIds = new LinkedHashSet<String>(mutableSubClusters);
 		uniqueIds.addAll(childClusterIds);
 		cluster.setSubclusters(new LinkedList<String>(uniqueIds));
 	}
