@@ -1,0 +1,29 @@
+# Cloudflare Pages configuration for Influent
+# https://developers.cloudflare.com/pages/
+#
+# Deployment steps:
+#   1. Build static assets locally:
+#        ./build-cloudflare.sh influent-app
+#   2. Deploy to Cloudflare Pages (first time):
+#        wrangler pages project create influent
+#   3. Deploy build output:
+#        wrangler pages deploy dist/ --project-name influent
+#
+# Required environment variable (set in Cloudflare Pages dashboard):
+#   BACKEND_URL  – base URL of the running Java backend, e.g.
+#                  https://api.example.com
+#                  The backend must be reachable from Cloudflare's network.
+#
+# Tip: for CI/CD, add the build command and output directory in the
+# Cloudflare Pages dashboard or in a GitHub Actions workflow.  The build
+# environment must have Java 8+ and Maven 3.1+ available; install them
+# via the dashboard's "Install command" if needed.
+
+name = "influent"
+pages_build_output_dir = "dist"
+compatibility_date = "2024-01-01"
+
+[vars]
+# Default placeholder – override this in the Cloudflare Pages dashboard
+# under Settings > Environment variables.
+BACKEND_URL = "http://localhost:8080"
