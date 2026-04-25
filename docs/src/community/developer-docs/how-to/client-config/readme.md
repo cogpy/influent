@@ -23,10 +23,10 @@ The Influent header contains information about the data source to which the appl
 
 <h6 class="procedure">To edit the Influent header components</h6>
 
-1. Open the [branding.css](https://github.com/unchartedsoftware/influent/blob/master/influent-app/src/main/webapp/theme/branding.css) file in your project's [src/main/webapp/theme/](https://github.com/unchartedsoftware/influent/tree/master/influent-app/src/main/webapp/theme) folder.
+1. Open the [branding.css](https://github.com/cogpy/influent/blob/master/influent-app/src/main/webapp/theme/branding.css) file in your project's [src/main/webapp/theme/](https://github.com/cogpy/influent/tree/master/influent-app/src/main/webapp/theme) folder.
 2. Edit the value of the *content* property for the **.banner-text:before** selector to modify the banner that indicates the scope of the source dataset.
 3. Save the **branding.css** file.
-4. Open the [client-config.js](https://github.com/unchartedsoftware/influent/blob/master/influent-app/src/main/resources/client-config.js) file in your project's [src/main/resources/](https://github.com/unchartedsoftware/influent/tree/master/influent-app/src/main/resources) folder.
+4. Open the [client-config.js](https://github.com/cogpy/influent/blob/master/influent-app/src/main/resources/client-config.js) file in your project's [src/main/resources/](https://github.com/cogpy/influent/tree/master/influent-app/src/main/resources) folder.
 5. Edit the **datasource** parameter to specify the name of your data source. In a secure environment, this property can be used to display classification.
 6. Edit the **title** to specify the title of your application as it will appear in the end user's Web browser and bookmarked links.
 
@@ -38,7 +38,7 @@ The Flow view, Influent's workspace for investigating the flow of transactions, 
 
 <h6 class="procedure">To specify the default date range</h6>
 
-1. In your [client-config.js](https://github.com/unchartedsoftware/influent/blob/master/influent-app/src/main/resources/client-config.js) file, set the **startingDateRange** to one of the following values:
+1. In your [client-config.js](https://github.com/cogpy/influent/blob/master/influent-app/src/main/resources/client-config.js) file, set the **startingDateRange** to one of the following values:
 <div class="props">
 		<table class="summaryTable" width="100%">
 			<thead>
@@ -82,11 +82,11 @@ The Flow view, Influent's workspace for investigating the flow of transactions, 
 
 In the Influent workspace, the cards that represent the accounts in your transaction and entity data display a set of icons that indicate key account attributes. 
 
-A set of default icons are available for your use in the Aperture JS project ([aperture-icons/src/main/resources/oculus/aperture/icons/hscb/entity/actor/](https://github.com/unchartedsoftware/aperturejs/tree/master/aperture-icons/src/main/resources/oculus/aperture/icons/hscb/entity/actor)).
+A set of default icons are available for your use in the Aperture JS project ([aperture-icons/src/main/resources/oculus/aperture/icons/hscb/entity/actor/](https://github.com/cogpy/aperturejs/tree/master/aperture-icons/src/main/resources/oculus/aperture/icons/hscb/entity/actor)).
 
 <h6 class="procedure">To edit which fields and icons are displayed on cards</h6>
 
-1. In your [client-config.js](https://github.com/unchartedsoftware/influent/blob/master/influent-app/src/main/resources/client-config.js) file, edit the **iconMap** property to include icon mappings for each of the [FL\_PropertyTag](../connect-data/#fl_propertytag) names that correspond to the attributes you want to display.
+1. In your [client-config.js](https://github.com/cogpy/influent/blob/master/influent-app/src/main/resources/client-config.js) file, edit the **iconMap** property to include icon mappings for each of the [FL\_PropertyTag](../connect-data/#fl_propertytag) names that correspond to the attributes you want to display.
 2. For each mapping, create cases for all of the possible values for the corresponding field. At a minimum, each case requires:
 	<div class="props">
 		<table class="summaryTable" width="100%">
@@ -105,7 +105,7 @@ A set of default icons are available for your use in the Aperture JS project ([a
 					<td class="property">icon</td>
 					<td class="description">A default Aperture JS icon:
 						<ol>
-							<li>Specify the location of the icon by setting the <strong>type</strong> to the name of its parent folder in the <a href="https://github.com/unchartedsoftware/aperturejs/tree/master/aperture-icons/src/main/resources/oculus/aperture/icons/hscb/entity/actor/organization"><em>aperture-icons/<wbr>src/<wbr>main/<wbr>resources/<wbr>oculus/<wbr>aperture/<wbr>icons/<wbr>hscb/</em></a> folder of the Aperture JS project.</li>
+							<li>Specify the location of the icon by setting the <strong>type</strong> to the name of its parent folder in the <a href="https://github.com/cogpy/aperturejs/tree/master/aperture-icons/src/main/resources/oculus/aperture/icons/hscb/entity/actor/organization"><em>aperture-icons/<wbr>src/<wbr>main/<wbr>resources/<wbr>oculus/<wbr>aperture/<wbr>icons/<wbr>hscb/</em></a> folder of the Aperture JS project.</li>
 							<li>If the specified folder contains multiple icons, use the <strong>attributes</strong> to indicate the subfolder in which the icon is found and pass in its name.</li>
 						</ol>
 					</td>
@@ -114,7 +114,7 @@ A set of default icons are available for your use in the Aperture JS project ([a
 					<td class="property"><em>url</em></td>
 					<td class="description">Location of a custom image:
 						<ol>
-							<li>Copy your custom images to your project's [src/main/webapp/img/](https://github.com/unchartedsoftware/influent/tree/master/influent-app/src/main/webapp/img) folder.</li>
+							<li>Copy your custom images to your project's [src/main/webapp/img/](https://github.com/cogpy/influent/tree/master/influent-app/src/main/webapp/img) folder.</li>
 							<li>Set the *url* to *'img/file-name.png'*.</li>
 						</ol>
 					</td>

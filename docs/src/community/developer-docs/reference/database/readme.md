@@ -9,7 +9,7 @@ layout: submenu
 
 # database-config.xml #
 
-The following sections describe the [database-config.xml](https://github.com/unchartedsoftware/influent/blob/master/influent-app/src/main/resources/database-config.xml) file in your project's [src/main/resources/](https://github.com/unchartedsoftware/influent/tree/master/influent-app/src/main/resources) folder:
+The following sections describe the [database-config.xml](https://github.com/cogpy/influent/blob/master/influent-app/src/main/resources/database-config.xml) file in your project's [src/main/resources/](https://github.com/cogpy/influent/tree/master/influent-app/src/main/resources) folder:
 
 - [FIN_LINK](#fin-link)
 - [Custom Details](#custom-details)

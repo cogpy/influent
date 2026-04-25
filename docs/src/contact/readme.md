@@ -17,7 +17,7 @@ For assistance in creating custom transaction flow applications to examine other
 
 Technical suggestions and contributions are also welcome. Please post your feedback or questions to:
 
-[Influent GitHub Issues forum](https://github.com/unchartedsoftware/influent/issues).
+[Influent GitHub Issues forum](https://github.com/cogpy/influent/issues).
 
 ### Toronto Office ###
 

@@ -11,8 +11,8 @@
 	<description>Parent module for building Influent projects</description>
 	<url>influent.org</url>
 	<scm>
-		<url>https://github.com/unchartedsoftware/influent</url>
-		<connection>scm:git:https://github.com/unchartedsoftware/influent.git</connection>
+		<url>https://github.com/cogpy/influent</url>
+		<connection>scm:git:https://github.com/cogpy/influent.git</connection>
 	</scm>
 	<licenses>
 		<license>

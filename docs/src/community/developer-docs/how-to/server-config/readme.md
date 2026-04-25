@@ -61,7 +61,7 @@ By default, Ehcache is configured for a server with 8 GB RAM. There are four cac
 
 <h6 class="procedure">To edit the resources assigned to each cache</h6>
 
-1. Open the [ehcache.xml](https://github.com/unchartedsoftware/influent/blob/master/influent-app/src/main/resources/ehcache.xml) file in the [src/main/resources/](https://github.com/unchartedsoftware/influent/tree/master/influent-app/src/main/resources) directory of your project.
+1. Open the [ehcache.xml](https://github.com/cogpy/influent/blob/master/influent-app/src/main/resources/ehcache.xml) file in the [src/main/resources/](https://github.com/cogpy/influent/tree/master/influent-app/src/main/resources) directory of your project.
 2. Edit the **maxBytesLocalHeap** attribute for each cache to specify the allocated RAM. <p class="list-paragraph">We recommend you allocate 75% of the server RAM among the four caches according the guidelines below and reserve the remaining 25% to working memory.</p>
 <div class="props">
 	<table class="summaryTable" width="100%">
@@ -93,7 +93,7 @@ By default, Ehcache is configured for a server with 8 GB RAM. There are four cac
 </div>
 3. Edit the **maxBytesLocalDisk** attribute for each cache to specify the allocated disk cache.<p class="list-paragraph">We recommend you assign a minimum of 3 times the allocated RAM in disk cache. For example if you assigned 0.6 GB RAM, then assign 1.8 GB disk cache.</p>
 4. Edit the **diskstore** element to change the location of the stored caches. By default, Influent stores each cache in the *ehcache.disk.store.dir* directory.
-5. Save the [ehcache.xml](https://github.com/unchartedsoftware/influent/blob/master/influent-app/src/main/resources/ehcache.xml) file.
+5. Save the [ehcache.xml](https://github.com/cogpy/influent/blob/master/influent-app/src/main/resources/ehcache.xml) file.
 
 ## <a name="authentication"></a> Authentication (Optional) ##
 
@@ -103,10 +103,10 @@ Optional plugin modules like [Apache Shiro](http://shiro.apache.org/) allow you 
 
 <h6 class="procedure">To use Apache Shiro to enable user authentication</h6>
 
-1. Open the [client-config.js](https://github.com/unchartedsoftware/influent/tree/master/influent-app/src/main/resources/client-config.js) file your project's [src/main/resources/](https://github.com/unchartedsoftware/influent/tree/master/influent-app/src/main/resources/) folder.
+1. Open the [client-config.js](https://github.com/cogpy/influent/tree/master/influent-app/src/main/resources/client-config.js) file your project's [src/main/resources/](https://github.com/cogpy/influent/tree/master/influent-app/src/main/resources/) folder.
 2. Set the **useAuth** property to *true* and save the file.
-3. Create a login JavaServer Page (JSP) in your project's [src/main/webapp/](https://github.com/unchartedsoftware/influent/tree/master/kiva/src/main/webapp) folder. You can copy and modify the [login.jsp](https://github.com/unchartedsoftware/influent/blob/master/kiva/src/main/webapp/login.jsp) file in the Kiva example application.
-4. Open the [server.config](https://github.com/unchartedsoftware/influent/blob/master/kiva/src/main/resources/server.config) file in your project's [src/main/resources/](https://github.com/unchartedsoftware/influent/tree/master/influent-app/src/main/resources/) folder.
+3. Create a login JavaServer Page (JSP) in your project's [src/main/webapp/](https://github.com/cogpy/influent/tree/master/kiva/src/main/webapp) folder. You can copy and modify the [login.jsp](https://github.com/cogpy/influent/blob/master/kiva/src/main/webapp/login.jsp) file in the Kiva example application.
+4. Open the [server.config](https://github.com/cogpy/influent/blob/master/kiva/src/main/resources/server.config) file in your project's [src/main/resources/](https://github.com/cogpy/influent/tree/master/influent-app/src/main/resources/) folder.
 5. Add, uncomment or edit the following *SimpleShiroAuthModule* properties file to configure the login and hash algorithm settings:
 <div class="props">
 	<table class="summaryTable" width="100%">
@@ -137,7 +137,7 @@ Optional plugin modules like [Apache Shiro](http://shiro.apache.org/) allow you 
 	</table>
 </div>
 6. Save the **server.config** file.
-7. Create a [shiro.ini](https://github.com/unchartedsoftware/influent/blob/master/kiva/src/main/resources/shiro.ini) file in your [src/main/resources/](https://github.com/unchartedsoftware/influent/blob/master/kiva/src/main/resources/) folder.
+7. Create a [shiro.ini](https://github.com/cogpy/influent/blob/master/kiva/src/main/resources/shiro.ini) file in your [src/main/resources/](https://github.com/cogpy/influent/blob/master/kiva/src/main/resources/) folder.
 8. Populate the **shiro.ini** file with your usernames and password hashes. You can also specify roles for each of your users.
 
 	```

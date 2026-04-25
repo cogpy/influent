@@ -10,7 +10,7 @@ layout: submenu
 clusterer.config
 ===================
 
-The following sections describe advanced clustering properties and concepts in the [clusterer.config](https://github.com/unchartedsoftware/influent/blob/master/influent-app/src/main/resources/clusterer.config) file in your project's [src/main/resources/](https://github.com/unchartedsoftware/influent/tree/master/influent-app/src/main/resources) folder:
+The following sections describe advanced clustering properties and concepts in the [clusterer.config](https://github.com/cogpy/influent/blob/master/influent-app/src/main/resources/clusterer.config) file in your project's [src/main/resources/](https://github.com/cogpy/influent/tree/master/influent-app/src/main/resources) folder:
 
 - [Stop Words](#stop-words)
 - [String Clustering Methods](#string-clustering)

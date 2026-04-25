@@ -11,7 +11,7 @@ layout: submenu
 
 To organize and simplify the visual representation of branched transaction flow, Influent can dynamically group together similar entities into clusters. Clusters can contain individual accounts and/or other clusters to form a hierarchy.
 
-The following sections describe aspects of Influent's hierarchical clustering algorithm that can be configured using the [clusterer.config](https://github.com/unchartedsoftware/influent/blob/master/influent-app/src/main/resources/clusterer.config) file in the [src/main/resources/](https://github.com/unchartedsoftware/influent/tree/master/influent-app/src/main/resources) folder of your project directory.
+The following sections describe aspects of Influent's hierarchical clustering algorithm that can be configured using the [clusterer.config](https://github.com/cogpy/influent/blob/master/influent-app/src/main/resources/clusterer.config) file in the [src/main/resources/](https://github.com/cogpy/influent/tree/master/influent-app/src/main/resources) folder of your project directory.
 
 **NOTE**: For information on advanced clustering properties and concepts, see the [Clustering Settings](../../reference/clustering/) reference topic.
 

@@ -9,7 +9,7 @@ layout: submenu
 
 # server.config #
 
-The following sections describe the server-side modules and properties in the [server.config](https://github.com/unchartedsoftware/influent/blob/master/influent-app/src/main/resources/server.config) file in the [src/main/resources/](https://github.com/unchartedsoftware/influent/tree/master/influent-app/src/main/resources) folder of your project directory:
+The following sections describe the server-side modules and properties in the [server.config](https://github.com/cogpy/influent/blob/master/influent-app/src/main/resources/server.config) file in the [src/main/resources/](https://github.com/cogpy/influent/tree/master/influent-app/src/main/resources) folder of your project directory:
 
 - [Build Options](#build-options)
 - [Data Access](#data-access)
@@ -219,7 +219,7 @@ For detailed instruction on implement Apache Shiro, see the [Server Configuratio
 
 ## <a name="image-capture"></a>Image Capture ##
 
-The *PhantomImageModule* properties in the [server.config](https://github.com/unchartedsoftware/influent/blob/master/influent-app/src/main/resources/server.config) file control the PhantomJS module used to export screenshots of the Influent workspace.
+The *PhantomImageModule* properties in the [server.config](https://github.com/cogpy/influent/blob/master/influent-app/src/main/resources/server.config) file control the PhantomJS module used to export screenshots of the Influent workspace.
 
 <div class="props">
 	<table class="summaryTable" width="100%">

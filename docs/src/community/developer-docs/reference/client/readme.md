@@ -9,7 +9,7 @@ layout: submenu
 
 # client-config.js #
 
-The following sections describe the client-side modules and properties in the [client-config.js](https://github.com/unchartedsoftware/influent/blob/master/influent-app/src/main/resources/client-config.js) file in your project's [src/main/resources/](https://github.com/unchartedsoftware/influent/tree/master/influent-app/src/main/resources) folder:
+The following sections describe the client-side modules and properties in the [client-config.js](https://github.com/cogpy/influent/blob/master/influent-app/src/main/resources/client-config.js) file in your project's [src/main/resources/](https://github.com/cogpy/influent/tree/master/influent-app/src/main/resources) folder:
 
 - [Plugin Views](#plugin-views)
 - [Session Management](#session-management)
@@ -33,7 +33,7 @@ To create and display a plugin view, you must:
 
 ### Plugin Module ###
 
-An example plugin module, [stubView.js](https://github.com/unchartedsoftware/influent/blob/master/kiva/src/main/webapp/scripts/stubView.js), is available in the Kiva example application at [kiva/src/main/webapp/scripts/](https://github.com/unchartedsoftware/influent/blob/master/kiva/src/main/webapp/scripts/).
+An example plugin module, [stubView.js](https://github.com/cogpy/influent/blob/master/kiva/src/main/webapp/scripts/stubView.js), is available in the Kiva example application at [kiva/src/main/webapp/scripts/](https://github.com/cogpy/influent/blob/master/kiva/src/main/webapp/scripts/).
 
 ### client-config.js Settings ###
 
@@ -209,7 +209,7 @@ The Influent header contains information about the data source to which the appl
 		</table>
 </div>
 
-Additional header details can be edited in the [branding.css](https://github.com/unchartedsoftware/influent/blob/master/influent-app/src/main/webapp/theme/branding.css) file in [src/main/webapp/theme/](https://github.com/unchartedsoftware/influent/tree/master/influent-app/src/main/webapp/theme).
+Additional header details can be edited in the [branding.css](https://github.com/cogpy/influent/blob/master/influent-app/src/main/webapp/theme/branding.css) file in [src/main/webapp/theme/](https://github.com/cogpy/influent/tree/master/influent-app/src/main/webapp/theme).
 
 - To modify the banner that indicates the scope of the source dataset, edit the value of the *content* property for the **.banner-text:before** selector. 
 

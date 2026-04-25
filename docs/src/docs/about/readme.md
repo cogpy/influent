@@ -21,7 +21,7 @@ Influent source code and documentation copyright 2016 Uncharted Software Inc.
 
 ### License ###
 
-Influent is under ongoing development and is freely available for download from [GitHub](https://github.com/unchartedsoftware/influent) under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0) open source licensing.
+Influent is under ongoing development and is freely available for download from [GitHub](https://github.com/cogpy/influent) under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0) open source licensing.
 <br><br><br>
 
 <h6 class="fine">Acknowledgments</h6>
