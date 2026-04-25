@@ -11,7 +11,7 @@ layout: submenu
 
 The Influent web app is a servlet with server-side Java and client-side JavaScript and HTML5. The following instructions describe the process of installing the prerequisites and source code needed to build a custom Influent web app.
 
-The Influent source code is available on [GitHub](https://github.com/unchartedsoftware/influent).
+The Influent source code is available on [GitHub](https://github.com/cogpy/influent).
 
 ## <a name="prerequisites"></a> Installing Prerequisites ##
 
@@ -70,21 +70,21 @@ The following third-party tools are recommended, but not required:
 
 ### <a name="source-code-repositories"></a> Source Code Repositories ###
 
-Source code repositories for Influent and its dependent projects, Aperture JS and Ensemble Clustering, are available on [GitHub](https://github.com/unchartedsoftware/):
+Source code repositories for Influent and its dependent projects, Aperture JS and Ensemble Clustering, are available on [GitHub](https://github.com/cogpy/):
 
-- [Influent](https://github.com/unchartedsoftware/influent)
-- [Aperture JS](https://github.com/unchartedsoftware/aperturejs/tree/master): Adaptable and extensible JavaScript visualization framework with supporting REST services.
-- [Ensemble Clustering](https://github.com/unchartedsoftware/ensemble-clustering): Flexible multi-threaded clustering library for rapidly constructing tailored clustering solutions.
+- [Influent](https://github.com/cogpy/influent)
+- [Aperture JS](https://github.com/cogpy/aperturejs/tree/master): Adaptable and extensible JavaScript visualization framework with supporting REST services.
+- [Ensemble Clustering](https://github.com/cogpy/ensemble-clustering): Flexible multi-threaded clustering library for rapidly constructing tailored clustering solutions.
 
 **NOTE**: We recommend you watch these projects on GitHub to receive email notifications each time a new release becomes available.
 
 <h6 class="procedure">To work with the Uncharted source code</h6>
 
-1. Clone the Influent repository:<p class="list-paragraph"><a href="https://github.com/unchartedsoftware/influent.git">https://github.com/unchartedsoftware/influent.git</a></p>
-2. Clone the Aperture JS repository.<p class="list-paragraph"><a href="https://github.com/unchartedsoftware/aperturejs.git">https://github.com/unchartedsoftware/aperturejs.git</a></p>
+1. Clone the Influent repository:<p class="list-paragraph"><a href="https://github.com/cogpy/influent.git">https://github.com/cogpy/influent.git</a></p>
+2. Clone the Aperture JS repository.<p class="list-paragraph"><a href="https://github.com/cogpy/aperturejs.git">https://github.com/cogpy/aperturejs.git</a></p>
 3. Determine which version of Aperture JS you require:
 	<ol type="a">
-		<li>Open the main <a href="https://github.com/unchartedsoftware/influent/blob/master/pom.xml">pom.xml</a> file in the <a href="https://github.com/unchartedsoftware/influent/tree/master">root</a> of your Influent working directory.</li>
+		<li>Open the main <a href="https://github.com/cogpy/influent/blob/master/pom.xml">pom.xml</a> file in the <a href="https://github.com/cogpy/influent/tree/master">root</a> of your Influent working directory.</li>
 		<li>Search for the <strong>&lt;aperture.version&gt;</strong> element, which specifies the required version.</li>
 	</ol>
 4. Check out the Aperture JS branch or tag corresponding to the required version:
@@ -93,10 +93,10 @@ Source code repositories for Influent and its dependent projects, Aperture JS an
 	git checkout <branch>
 	```
 
-5. Clone the Ensemble Clustering repository.<p class="list-paragraph"><a href="https://github.com/unchartedsoftware/ensemble-clustering.git">https://github.com/unchartedsoftware/ensemble-clustering.git</a></p>
+5. Clone the Ensemble Clustering repository.<p class="list-paragraph"><a href="https://github.com/cogpy/ensemble-clustering.git">https://github.com/cogpy/ensemble-clustering.git</a></p>
 6. Determine which version of Ensemble Clustering you require:
 	<ol type="a">
-		<li>Open the <a href="https://github.com/unchartedsoftware/influent/blob/master/influent-server/pom.xml">pom.xml</a> file in the <a href="https://github.com/unchartedsoftware/influent/tree/master/influent-server">influent-server/</a> folder of your Influent working directory.</li>
+		<li>Open the <a href="https://github.com/cogpy/influent/blob/master/influent-server/pom.xml">pom.xml</a> file in the <a href="https://github.com/cogpy/influent/tree/master/influent-server">influent-server/</a> folder of your Influent working directory.</li>
 		<li>Search for the <strong>&lt;artifactId&gt;ensemble-clustering&lt;/artifactId&gt;</strong> element and note the corresponding <strong>&lt;version&gt;</strong> element.</li>
 	</ol>
 7. Check out the Ensemble Clustering branch or tag corresponding to the required version.
@@ -144,7 +144,7 @@ These applications connect to databases Uncharted has made available online for 
 
 <h6 class="procedure">To run the example applications in a Jetty instance</h6>
 
-1. Execute the following command in the [Influent App](https://github.com/unchartedsoftware/influent/tree/master/influent-app), [Bitcoin](https://github.com/unchartedsoftware/influent/tree/master/bitcoin), [Kiva](https://github.com/unchartedsoftware/influent/tree/master/kiva) or [Walker](https://github.com/unchartedsoftware/influent/tree/master/walker) project folder of your Influent working directory:
+1. Execute the following command in the [Influent App](https://github.com/cogpy/influent/tree/master/influent-app), [Bitcoin](https://github.com/cogpy/influent/tree/master/bitcoin), [Kiva](https://github.com/cogpy/influent/tree/master/kiva) or [Walker](https://github.com/cogpy/influent/tree/master/walker) project folder of your Influent working directory:
 
 	```bash
 	mvn package jetty:run
@@ -174,7 +174,7 @@ When configuring your first Influent application, we recommend you copy one of t
 		</thead>
 		<tbody>
 			<tr>
-				<td class="description"><a href="https://github.com/unchartedsoftware/influent/tree/master/influent-app">influent-app/</a></td>
+				<td class="description"><a href="https://github.com/cogpy/influent/tree/master/influent-app">influent-app/</a></td>
 				<td class="description">Financial</td>
 				<td class="description">
 					<ul style="margin-top: 0px;padding-left: 0px">
@@ -189,7 +189,7 @@ When configuring your first Influent application, we recommend you copy one of t
 				</td>
 			</tr>
 			<tr>
-				<td class="description"><a href="https://github.com/unchartedsoftware/influent/tree/master/bitcoin">bitcoin/</a></td>
+				<td class="description"><a href="https://github.com/cogpy/influent/tree/master/bitcoin">bitcoin/</a></td>
 				<td class="description">Financial</td>
 				<td class="description">
 					<ul style="margin-top: 0px;padding-left: 0px">
@@ -203,7 +203,7 @@ When configuring your first Influent application, we recommend you copy one of t
 				</td>
 			</tr>
 			<tr>
-				<td class="description"><a href="https://github.com/unchartedsoftware/influent/tree/master/kiva">kiva/</a></td>
+				<td class="description"><a href="https://github.com/cogpy/influent/tree/master/kiva">kiva/</a></td>
 				<td class="description">Financial</td>
 				<td class="description">
 					<ul style="margin-top: 0px;padding-left: 0px">
@@ -220,7 +220,7 @@ When configuring your first Influent application, we recommend you copy one of t
 				</td>
 			</tr>
 			<tr>
-				<td class="description"><a href="https://github.com/unchartedsoftware/influent/tree/master/walker">walker/</a></td>
+				<td class="description"><a href="https://github.com/cogpy/influent/tree/master/walker">walker/</a></td>
 				<td class="description">Email</td>
 				<td class="description">
 					<ul style="margin-top: 0px;padding-left: 0px">

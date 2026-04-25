@@ -88,7 +88,7 @@ For ease of integration with conventional relational databases, Influent provide
 
 ## <a name="transaction-data"></a> Transaction Data ##
 
-For Influent to read your transaction data, you must use the appropriate **DataViewTables** script (located in the [*influent-spi/src/main/dataviews*](https://github.com/unchartedsoftware/influent/tree/master/influent-spi/src/main/dataviews) directory) to add a set of tables to your source database.
+For Influent to read your transaction data, you must use the appropriate **DataViewTables** script (located in the [*influent-spi/src/main/dataviews*](https://github.com/cogpy/influent/tree/master/influent-spi/src/main/dataviews) directory) to add a set of tables to your source database.
 
 The following sections describe the process of transforming your transaction data for use with Influent:
 
@@ -145,7 +145,7 @@ Before you execute any commands in the SQL script, ensure that your database con
 
 ### <a name="add-influent-tables"></a> Adding Influent Tables to Your Database ###
 
-The **DataViewTables** scripts in the [*influent-spi/src/main/dataviews*](https://github.com/unchartedsoftware/influent/tree/master/influent-spi/src/main/dataviews) directory enable you to add Influent tables to your source database.
+The **DataViewTables** scripts in the [*influent-spi/src/main/dataviews*](https://github.com/cogpy/influent/tree/master/influent-spi/src/main/dataviews) directory enable you to add Influent tables to your source database.
 
 <h6 class="procedure">To run the DataViewTables script</h6>
 
@@ -162,15 +162,15 @@ The **DataViewTables** scripts in the [*influent-spi/src/main/dataviews*](https:
 		<tbody>
 			<tr>
 				<td class="description">HyperSQL Database</td>
-				<td class="description"><a href="https://github.com/unchartedsoftware/influent/blob/master/influent-spi/src/main/dataviews/DataViewTables_hsqldb.sql">DataViewTables_hsqldb.sql</a></td>
+				<td class="description"><a href="https://github.com/cogpy/influent/blob/master/influent-spi/src/main/dataviews/DataViewTables_hsqldb.sql">DataViewTables_hsqldb.sql</a></td>
 			</tr>
 			<tr>
 				<td class="description">Microsoft SQL Server</td>
-				<td class="description"><a href="https://github.com/unchartedsoftware/influent/blob/master/influent-spi/src/main/dataviews/DataViewTables_mssql.sql">DataViewTables_mssql.sql</a></td>
+				<td class="description"><a href="https://github.com/cogpy/influent/blob/master/influent-spi/src/main/dataviews/DataViewTables_mssql.sql">DataViewTables_mssql.sql</a></td>
 			</tr>
 			<tr>
 				<td class="description">MySQL</td>
-				<td class="description"><a href="https://github.com/unchartedsoftware/influent/blob/master/influent-spi/src/main/dataviews/DataViewTables_mysql.sql">DataViewTables_mysql.sql</a></td>
+				<td class="description"><a href="https://github.com/cogpy/influent/blob/master/influent-spi/src/main/dataviews/DataViewTables_mysql.sql">DataViewTables_mysql.sql</a></td>
 			</tr>
 		</tbody>
 	</table>

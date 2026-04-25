@@ -9,7 +9,7 @@ layout: submenu
 
 # ClusterSummary Tables #
 
-The ClusterSummary tables summarize entities with a large number of associated entities (e.g., an account owner with a large number of accounts). While the **DataViewTables** scripts in [*influent-spi/src/main/dataviews/*](https://github.com/unchartedsoftware/influent/tree/master/influent-spi/src/main/dataviews) will create the ClusterSummary tables, you must choose whether to populate them. 
+The ClusterSummary tables summarize entities with a large number of associated entities (e.g., an account owner with a large number of accounts). While the **DataViewTables** scripts in [*influent-spi/src/main/dataviews/*](https://github.com/cogpy/influent/tree/master/influent-spi/src/main/dataviews) will create the ClusterSummary tables, you must choose whether to populate them. 
 
 - [ClusterSummary](#clustersummary)
 - [ClusterSummaryMembers](#clustersummarymembers)
@@ -36,7 +36,7 @@ There are two types of records that can be inserted into the Transaction Flow ta
 
 The ClusterSummary table stores the properties (labels, entity attributes, branching permissions) of all the cluster summary and account owner entities in your data. Each cluster should have multiple entries in this table, each of which stores a different property.
 
-All properties should be mapped to an FL_PropertyTag. For complete details of the available PropertyTags, see the **DataEnums\_vX.X.avdl** file in [influent-spi/src/main/avro/](https://github.com/unchartedsoftware/influent/tree/master/influent-spi/src/main/avro).
+All properties should be mapped to an FL_PropertyTag. For complete details of the available PropertyTags, see the **DataEnums\_vX.X.avdl** file in [influent-spi/src/main/avro/](https://github.com/cogpy/influent/tree/master/influent-spi/src/main/avro).
 
 At a minimum, each entry should have entries for the following properties:
 
@@ -76,14 +76,14 @@ To view example ClusterSummary entries, see the [Example Records](#example-recor
 				<td class="property">Tag</td>
 				<td class="value">varchar(50)</td>
 				<td class="description">Yes</td>
-				<td class="description">Tag associated with the corresponding property expressed as an FL_PropertyTag. <br><br>For complete details of the available PropertyTags, see the <strong>DataEnums_vX.X.avdl</strong> file in <a href="https://github.com/unchartedsoftware/influent/tree/master/influent-spi/src/main/avro"><em>influent-spi/src/main/avro/</em></a>.</td>
+				<td class="description">Tag associated with the corresponding property expressed as an FL_PropertyTag. <br><br>For complete details of the available PropertyTags, see the <strong>DataEnums_vX.X.avdl</strong> file in <a href="https://github.com/cogpy/influent/tree/master/influent-spi/src/main/avro"><em>influent-spi/src/main/avro/</em></a>.</td>
 			</tr>
 			<tr>
 				<td class="property">Type</td>
 				<td class="value">varchar(50)</td>
 				<td class="description">Yes</td>
 				<td class="description">Data type of the corresponding property expressed as an FL_PropertyType: <em>FLOAT</em>, <em>DOUBLE</em>, <em>INTEGER</em>, <em>LONG</em>, <em>BOOLEAN</em>, <em>STRING</em>, <em>DATE</em> or <em>GEO</em>.
-				<br><br>For complete details of the available DataEnums, see the <strong>DataEnums_vX.X.avdl</strong> file in <a href="https://github.com/unchartedsoftware/influent/tree/master/influent-spi/src/main/avro"><em>influent-spi/src/main/avro/</em></a>.
+				<br><br>For complete details of the available DataEnums, see the <strong>DataEnums_vX.X.avdl</strong> file in <a href="https://github.com/cogpy/influent/tree/master/influent-spi/src/main/avro"><em>influent-spi/src/main/avro/</em></a>.
 				</td>
 			</tr>
 			<tr>

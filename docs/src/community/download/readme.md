@@ -10,15 +10,15 @@ Download
 
 The Influent source code is available on GitHub. Influent is under ongoing development and is freely available for download under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0) open source licensing.
 
-<a href="https://github.com/unchartedsoftware/influent" class="download-link">Influent Source Code</a>
+<a href="https://github.com/cogpy/influent" class="download-link">Influent Source Code</a>
 
 **NOTE**: Influent is dependent on Aperture JS and Ensemble Clustering. Like Influent, the source code for these projects is under ongoing development and is freely available for download under the The MIT License. The source code for both projects is available on GitHub.
 
 
 <table width="100%">
 	<tr>
-		<td width="50%"><a href="https://github.com/unchartedsoftware/aperturejs/tree/master" class="download-link">Aperture JS Source Code</a></td>
-		<td width="50%"><a href="https://github.com/unchartedsoftware/ensemble-clustering" class="download-link">Ensemble Clustering</a></td>
+		<td width="50%"><a href="https://github.com/cogpy/aperturejs/tree/master" class="download-link">Aperture JS Source Code</a></td>
+		<td width="50%"><a href="https://github.com/cogpy/ensemble-clustering" class="download-link">Ensemble Clustering</a></td>
 	</tr>
 </table>
 

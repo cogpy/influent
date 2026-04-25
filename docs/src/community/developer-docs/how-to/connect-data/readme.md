@@ -16,11 +16,11 @@ Once you have transformed and indexed your transaction and entity data, you must
 
 ## <a name="app-properties"></a> Specifying the Connection Details ##
 
-The [server.config](https://github.com/unchartedsoftware/influent/blob/master/influent-app/src/main/resources/server.config) file in your Influent project's [src/main/resources/](https://github.com/unchartedsoftware/influent/tree/master/influent-app/src/main/resources) folder specifies how Influent connects to your database and Solr instance.
+The [server.config](https://github.com/cogpy/influent/blob/master/influent-app/src/main/resources/server.config) file in your Influent project's [src/main/resources/](https://github.com/cogpy/influent/tree/master/influent-app/src/main/resources) folder specifies how Influent connects to your database and Solr instance.
 
 <h6 class="procedure">To edit the database and Solr connection details</h6>
 
-1. Open the [server.config](https://github.com/unchartedsoftware/influent/blob/master/influent-app/src/main/resources/server.config) file.
+1. Open the [server.config](https://github.com/cogpy/influent/blob/master/influent-app/src/main/resources/server.config) file.
 2. Add or edit the following values in the *Database Server Properties* section of the file:
 <div class="props">
 	<table class="summaryTable" width="100%">
@@ -74,7 +74,7 @@ The [server.config](https://github.com/unchartedsoftware/influent/blob/master/in
 		```
 
 4. Edit the **influent.pattern.search.remoteURL** value in the *Pattern Search Database* section to specify the URL of your Graph QuBE server (e.g., `http://solr.uncharted.sofware:8805/pattern/search/example`).
-5. Save the [server.config](https://github.com/unchartedsoftware/influent/blob/master/influent-app/src/main/resources/server.config) file.
+5. Save the [server.config](https://github.com/cogpy/influent/blob/master/influent-app/src/main/resources/server.config) file.
 
 ## <a name="raw-data"></a> Connecting to Your Raw Data Source ##
 
@@ -82,7 +82,7 @@ In addition to requiring access to the LinkFlow and Entity tables created by the
 
 <h6 class="procedure">To connect to your raw data source</h6>
 
-1. Open the [database-config.xml](https://github.com/unchartedsoftware/influent/blob/master/influent-app/src/main/resources/database-config.xml) file in the [src/main/resources/](https://github.com/unchartedsoftware/influent/tree/master/influent-app/src/main/resources) directory of your project.
+1. Open the [database-config.xml](https://github.com/cogpy/influent/blob/master/influent-app/src/main/resources/database-config.xml) file in the [src/main/resources/](https://github.com/cogpy/influent/tree/master/influent-app/src/main/resources) directory of your project.
 2. Scroll to the FIN_LINK **&lt;dataTableSchema&gt;** and update the table **&lt;memberKey&gt;** value to point to the table in your raw data that contains your unique transaction IDs.
 3. Save the file.
 
@@ -90,9 +90,9 @@ In addition to requiring access to the LinkFlow and Entity tables created by the
 
 Influent Service Provider Interfaces (SPIs) enable you to provide runtime-injected modules for search, data access, clustering and other services. The SPI protocols are defined in cross-language form with [Apache Avro](http://avro.apache.org/).
 
-To map the fields in your data sources to the data types defined in the SPIs, you must edit the [property-config.xml](https://github.com/unchartedsoftware/influent/blob/master/influent-app/src/main/resources/property-config.xml) file in your project's [src/main/resources/](https://github.com/unchartedsoftware/influent/tree/master/influent-app/src/main/resources) folder.
+To map the fields in your data sources to the data types defined in the SPIs, you must edit the [property-config.xml](https://github.com/cogpy/influent/blob/master/influent-app/src/main/resources/property-config.xml) file in your project's [src/main/resources/](https://github.com/cogpy/influent/tree/master/influent-app/src/main/resources) folder.
 
-The following sections describe the data types you should be aware of when editing this file. Complete documentation of each type can be found in the **DataEnums\_vX.X.avdl** file in [influent-spi/src/main/avro/](https://github.com/unchartedsoftware/influent/tree/master/influent-spi/src/main/avro).
+The following sections describe the data types you should be aware of when editing this file. Complete documentation of each type can be found in the **DataEnums\_vX.X.avdl** file in [influent-spi/src/main/avro/](https://github.com/cogpy/influent/tree/master/influent-spi/src/main/avro).
 
 - [FL\_RequiredPropertyKey](#fl_requiredpropertykey)
 - [FL\_ReservedPropertyKey ](#fl_reservedpropertykey)
@@ -158,7 +158,7 @@ The following property keys are reserved for search keywords and should not be r
 
 The Avro data model includes FL\_PropertyTag names defined in the application layer as a taxonomy of user and application concepts independent of the data source. These tags allow application semantics to be reused with new data with minimal design and development.
 
-The following FL\_PropertyTags have applications that should be noted before you edit your property descriptors. For a complete list of FL_\PropertyTags, see the the **DataEnums\_vX.X.avdl** file in [influent-spi/src/main/avro/](https://github.com/unchartedsoftware/influent/tree/master/influent-spi/src/main/avro). 
+The following FL\_PropertyTags have applications that should be noted before you edit your property descriptors. For a complete list of FL_\PropertyTags, see the the **DataEnums\_vX.X.avdl** file in [influent-spi/src/main/avro/](https://github.com/cogpy/influent/tree/master/influent-spi/src/main/avro). 
 
 <div class="props">
 	<table class="summaryTable" width="100%">
@@ -188,7 +188,7 @@ The following FL\_PropertyTags have applications that should be noted before you
 
 <h6 class="procedure">To configure the property descriptors for your app</h6>
 
-1. Open the [property-config.xml](https://github.com/unchartedsoftware/influent/blob/master/influent-app/src/main/resources/property-config.xml) file in your project's [src/main/resources/](https://github.com/unchartedsoftware/influent/tree/master/influent-app/src/main/resources) folder. There are two sections in this file you must edit:
+1. Open the [property-config.xml](https://github.com/cogpy/influent/blob/master/influent-app/src/main/resources/property-config.xml) file in your project's [src/main/resources/](https://github.com/cogpy/influent/tree/master/influent-app/src/main/resources) folder. There are two sections in this file you must edit:
 	- **\<entities\>**, which contains the configuration for entity data fields
 	- **\<links\>**, which contains the configuration for transactions data fields
 2. Create a **\<type\>** element for each entity and transaction type in your source data. In the Bitcoin example application, there is one entity type and one transaction type: 
