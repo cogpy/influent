@@ -44,14 +44,15 @@ on:
         type: boolean
         default: false
 
-  # 3. New input landing on {{BRANCH}}. Loop-guarded in the gate job: the routine tags
+  # 3. New input landing on main. {{BRANCH}} is only the commit/PR target — evidence
+  #    arrives on the default branch. Loop-guarded in the gate job: the routine tags
   #    its own commits "{{MARKER}}" and skips them. Some agent actions reject a `push`
   #    context outright ("Unsupported event type: push"), so the gate RELAYS a human push
   #    into trigger 4 (a repository_dispatch fired with GITHUB_TOKEN does start a run) and
   #    exits. The push therefore still produces an iteration within a minute — just via a
   #    second run — and the state file's "reacts to a push" claim stays true.
   push:
-    branches: [{{BRANCH}}]
+    branches: [main]
     paths:
       {{TRIGGER_PATHS}}
 
