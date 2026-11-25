@@ -8,7 +8,7 @@
 
 ### Backend
 - **Language**: Java (JDK 1.6+, target compatibility 1.6)
-- **Build System**: Apache Maven 3.1+
+- **Build tool**: Apache Maven 3.1+
 - **Dependency Injection**: Google Guice
 - **Serialization**: Apache Avro (cross-language SPI protocols)
 - **Caching**: Ehcache
@@ -28,7 +28,7 @@
 
 ## Project Structure
 
-```
+```text
 influent/
 ├── influent-spi/         # Service Provider Interfaces (Avro definitions)
 ├── influent-server/      # Server-side Java implementation
@@ -73,10 +73,10 @@ cd walker && mvn package jetty:run
 ## Running Applications
 
 After starting an example app with `mvn package jetty:run`, access at:
-- http://localhost:8080/influent/
-- http://localhost:8080/bitcoin/
-- http://localhost:8080/kiva/
-- http://localhost:8080/walker/
+- <http://localhost:8080/influent/>
+- <http://localhost:8080/bitcoin/>
+- <http://localhost:8080/kiva/>
+- <http://localhost:8080/walker/>
 
 ## Testing
 
